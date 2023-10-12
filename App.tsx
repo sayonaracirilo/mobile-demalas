@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Header from './src/components/Header'
 import Landing from './src/pages/Landing'
+import Onboarding from './src/pages/Onboarding'
 import React, { useState, useEffect, useCallback } from 'react';
 import * as SplashScreen from 'expo-splash-screen'
 import * as Font from 'expo-font'
@@ -27,7 +28,7 @@ import {
     Roboto_700Bold_Italic,
     Roboto_900Black,
     Roboto_900Black_Italic,
-  } from '@expo-google-fonts/roboto'
+} from '@expo-google-fonts/roboto'
 
 const AppStack = createNativeStackNavigator()
 
@@ -81,6 +82,7 @@ export default function App() {
         <View onLayout={onLayout} style={styles.container}>
             <NavigationContainer>
                 <AppStack.Navigator >
+
                     <AppStack.Screen name="LandingPage"
                         component={Landing}
                         options={{
@@ -89,6 +91,8 @@ export default function App() {
                                 <Header />
                             ),
                         }} />
+                    <AppStack.Screen name="Onboarding" component={Onboarding} options={{headerShown:false}}/>
+
                 </AppStack.Navigator>
             </NavigationContainer>
         </View>

@@ -4,18 +4,21 @@ import { NavigationProp, useNavigation } from '@react-navigation/native'
 import travel from '../../assets/travel.png'
 
 
-export default function UserPage() {
+export default function Landing() {
 
     const navigation = useNavigation<NavigationProp<any>>()
 
+    function redirecionaOnboarding() {
+        navigation.navigate('Onboarding')
+    }
+
 
     return (
-
         <View style={styles.container}>
             <Text style={styles.textoPrincipal}> Compartilhe, conecte-se e inspire-se com outros entusiastas de viagem. </Text>
             <Text style={styles.textoSecundario}> E aí? Bora conectar? </Text>
             <Image source={travel} style={styles.image} />
-            <TouchableOpacity style={styles.botao}>
+            <TouchableOpacity style={styles.botao} onPress={redirecionaOnboarding}>
                 <Text style={styles.textoBotao}> Conectar</Text>
             </TouchableOpacity>
         </View>
@@ -37,7 +40,7 @@ const styles = StyleSheet.create({
         width: 250,
         alignItems: 'center',
         justifyContent: 'center',
-       
+
     },
     textoPrincipal: {
         color: '#202124',
@@ -54,18 +57,12 @@ const styles = StyleSheet.create({
     },
     textoBotao: {
         color: 'white',
-        fontSize: 30,
-        textAlign:'center',
-        fontFamily:'Roboto_700Bold',
+        fontSize: 28,
+        textAlign: 'center',
+        fontFamily: 'Roboto_500Medium',
     },
     image: {
         marginBottom: 40,
         marginTop: 40,
-    },
-    header: {
-        marginBottom: 40,
-        padding: 10,
-        alignItems: 'flex-start',
-        flexDirection: 'column',
     },
 })
