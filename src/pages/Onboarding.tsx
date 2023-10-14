@@ -8,8 +8,21 @@ import ConteudoStep2 from '../components/ConteudoStep2'
 import ConteudoStep3 from '../components/ConteudoStep3'
 import ConteudoStep4 from '../components/ConteudoStep4'
 
+
+
 export default function Onboarding() {
     const [step, setStep] = useState(1)
+    const [stepData, setStepData]=
+    useState({
+        step2:'Sou uma viajante apaixonada por explorar o mundo e descobrir novas culturas. Busco companhia que queiram novas experiências e memórias inesquecíveis.',
+    })
+
+    const handleStepChange = (stepNumber, data) =>{
+      setStepData({
+        ...stepData,
+        [`step${stepNumber}`]:data,
+      })
+    }
 
     const navigation = useNavigation<NavigationProp<any>>()
 
@@ -52,7 +65,7 @@ export default function Onboarding() {
             case 1:
                 return (<ConteudoStep1 />)
             case 2:
-                return (<ConteudoStep2 />)
+                return (<ConteudoStep2 data={stepData.step2} onStepDataChange={data => handleStepChange(2, data)} />)
             case 3:
                 return (<ConteudoStep3 />)
             case 4:

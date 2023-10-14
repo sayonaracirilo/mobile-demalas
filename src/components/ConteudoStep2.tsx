@@ -1,25 +1,29 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Text, TextInput } from 'react-native'
+import { StyleSheet, View, Text, TextInput,TouchableWithoutFeedback, Keyboard } from 'react-native'
 
-export default function ConteudoStep2() {
+interface ConteudoStep2 {
+    data: String
+    onStepDataChange: () => void
 
+}
 
-    const [texto, setTexto] = useState('Sou uma viajante apaixonada por explorar o mundo e descobrir novas culturas. Busco companhia que queiram novas experiências e memórias inesquecíveis.')
-
+export default function ConteudoStep2({data, onStepDataChange}: ConteudoStep2) {
 
     return (
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
             <View style={styles.container}>
                 <Text style={styles.textoPrincipal}> Fale mais sobre você </Text>
                 <Text style={styles.textoSecundario}> Adicione de forma resumida uma
                     decrição sobre você. </Text>
                 <TextInput
                     style={styles.input}
-                    onChangeText={(text) => setTexto(text)}
+                    onChangeText={(text) => onStepDataChange(text)}
                     multiline={true}
-                    value={texto}
+                    value={data}
                     placeholder="Digite seu texto aqui"
                 />
             </View>
+            </TouchableWithoutFeedback>
 
     )
 }
