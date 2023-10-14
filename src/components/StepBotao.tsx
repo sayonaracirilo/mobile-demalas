@@ -7,7 +7,7 @@ interface StepBotao {
 }
 
 
-export default function StepBotao({ onNext, label }) {
+export default function StepBotao({ onNext, label }: StepBotao) {
     return (
         <View style={styles.botao}>
             <TouchableOpacity onPress={onNext}>
@@ -20,19 +20,22 @@ export default function StepBotao({ onNext, label }) {
 const styles = StyleSheet.create({
     botao: {
         backgroundColor: '#F05D43',
-        padding: 10,
         borderRadius: 10,
         height: 60,
         width: 350,
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection:'row',
-        marginTop:80,
+        lineHeight:'normal',
+        alignItems:'center',
+        border:'none',
+        justifyContent:'center',
+    
+        
     },
+    
     textoBotao: {
         color: 'white',
         fontSize: 28,
         textAlign: 'center',
+        justifyContent: 'center',
         fontFamily: 'Roboto_500Medium',
     },
 });

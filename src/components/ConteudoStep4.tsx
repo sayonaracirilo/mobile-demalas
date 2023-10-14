@@ -1,5 +1,11 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState } from 'react'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+
+interface ConteudoStep4 {
+    onPress: () => void
+    label: String
+    selected: Boolean
+}
 
 export default function ConteudoStep4() {
     const [tags, setTags] = useState([
@@ -23,7 +29,7 @@ export default function ConteudoStep4() {
         { label: 'História', selected: false },
     ]);
 
-    function Tag({ label, selected, onPress }) {
+    function Tag({ label, selected, onPress }: ConteudoStep4) {
         return (
             <TouchableOpacity
                 onPress={onPress}

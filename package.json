@@ -24,6 +24,7 @@
     "react-native": "0.72.5",
     "react-native-date-picker": "^4.3.3",
     "react-native-datepicker": "^1.7.2",
+    "react-native-dismiss-keyboard": "^1.0.0",
     "react-native-google-fonts": "^0.0.0",
     "react-native-masked-text": "^1.13.0",
     "react-native-picker-select": "^8.1.0",

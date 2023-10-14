@@ -1,21 +1,26 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Text, TextInput } from 'react-native'
 
-export default function ConteudoStep1() {
+export default function ConteudoStep2() {
+
+
     const [texto, setTexto] = useState('Sou uma viajante apaixonada por explorar o mundo e descobrir novas culturas. Busco companhia que queiram novas experiências e memórias inesquecíveis.')
+
+
     return (
-        <View style={styles.container}>
-            <Text style={styles.textoPrincipal}> Fale mais sobre você </Text>
-            <Text style={styles.textoSecundario}> Adicione de forma resumida uma
-                decrição sobre você. </Text>
-            <TextInput
-                style={styles.input}
-                onChangeText={(text) => setTexto(text)}
-                multiline={true}
-                value={texto}
-                placeholder="Digite seu texto aqui"
-            />
-        </View>
+            <View style={styles.container}>
+                <Text style={styles.textoPrincipal}> Fale mais sobre você </Text>
+                <Text style={styles.textoSecundario}> Adicione de forma resumida uma
+                    decrição sobre você. </Text>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={(text) => setTexto(text)}
+                    multiline={true}
+                    value={texto}
+                    placeholder="Digite seu texto aqui"
+                />
+            </View>
+
     )
 }
 const styles = StyleSheet.create({

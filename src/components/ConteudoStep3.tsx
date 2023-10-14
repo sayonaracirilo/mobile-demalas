@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Text, TextInput } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
+import { TextInputMask } from 'react-native-masked-text'
 
 export default function ConteudoStep3() {
-    const [selectedState, setSelectedState] = useState('');
+    const [selectedState, setSelectedState] = useState('')
+    const [date, setDate] = useState('')
+
 
     const stateList = [
         { label: 'Acre (AC)', value: 'AC' },
@@ -40,7 +43,7 @@ export default function ConteudoStep3() {
             <Text style={styles.textoPrincipal}> Adicione mais dados sobre você </Text>
             <View>
                 <Text style={styles.label}>Estado</Text>
-                <View style={{ borderRadius: 10, borderWidth: 0, overflow: 'hidden' }}>
+                <View>
                     <Picker
                         selectedValue={selectedState}
                         onValueChange={(itemValue) => setSelectedState(itemValue)}
@@ -51,6 +54,20 @@ export default function ConteudoStep3() {
                         ))}
 
                     </Picker>
+
+                    <Text style={styles.label}>Date de Nascimento</Text>
+                    <TextInputMask
+                        style={styles.inputDate}
+                        type={'datetime'}
+                        options={{
+                            format: 'DD/MM/YYYY', // Aqui você define o formato da máscara desejada
+                        }}
+                        placeholder="DD/MM/AAAA"
+                        value={date}
+                        onChangeText={(itemValue) => setDate(itemValue)}
+                    />
+
+
                 </View>
             </View>
         </View>
@@ -74,9 +91,16 @@ const styles = StyleSheet.create({
         height: 50,
         borderColor: 'gray',
         paddingHorizontal: 10,
-        borderRadius: 100,
         backgroundColor: 'white',
         borderWidth: 0,
+    },
+    inputDate: {
+        width: 320,
+        height: 50,
+        paddingHorizontal: 10,
+        backgroundColor: 'white',
+        borderWidth: 0,
+        
     },
     textoPrincipal: {
         color: '#202124',

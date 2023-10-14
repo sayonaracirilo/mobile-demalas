@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View,KeyboardAvoidingView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Header from './src/components/Header'
@@ -82,7 +82,6 @@ export default function App() {
         <View onLayout={onLayout} style={styles.container}>
             <NavigationContainer>
                 <AppStack.Navigator >
-
                     <AppStack.Screen name="LandingPage"
                         component={Landing}
                         options={{

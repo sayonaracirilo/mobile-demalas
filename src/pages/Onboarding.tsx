@@ -66,7 +66,7 @@ export default function Onboarding() {
         <View style={styles.container}>
             <View style={styles.stepsRow}>
                 <TouchableOpacity onPress={() => (step > 1 ? stepAnterior() : redirecionaLanding())}>
-                    <MaterialIcons name={"keyboard-arrow-left"} size={24} color={"000000"} style={{ marginRight: 15 }} />
+                    <MaterialIcons name={"keyboard-arrow-left"} size={24} color={"#000000"} style={{ marginRight: 15 }} />
                 </TouchableOpacity>
                 {renderStep(1)}
                 <View style={styles.separator} />
@@ -77,7 +77,7 @@ export default function Onboarding() {
                 {renderStep(4)}
             </View>
             {renderConteudoStep()}
-            <View>
+            <View style={{position:'absolute', top:700 }}>
                 {step === 4 ? (
                     <StepBotao onNext={proximoStep} label="Finalizar" />
                 ) : (
