@@ -5,6 +5,7 @@ interface ConteudoStep4 {
     onPress: () => void
     label: String
     selected: Boolean
+
 }
 
 export default function ConteudoStep4() {
